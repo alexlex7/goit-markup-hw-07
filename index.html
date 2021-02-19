@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title lang="en">WebStudio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet">
@@ -13,25 +13,25 @@
 <body>
     <!--=================Шапка=================-->
     <header class="page-header">
-      <div class="container header-container">
-        <nav class="nav-site">
-          <a href="/" class="logo logo-link link"><span>Web</span>Studio</a>
-          <ul class="site-nav list">
-            <li class="item current">
-              <a class="link active" href="./index.html">Студия</a>
+      <div class="container page-header__container">
+        <nav class="page-header__nav-site">
+          <a href="/" class="logo logo-link"><span>Web</span>Studio</a>
+          <ul class="page-header__list list">
+            <li class="page-header__item current">
+              <a class="page-header__link active link" href="./index.html">Студия</a>
             </li>
-            <li class="item">
-              <a class="link" href="./portfolio.html">Портфолио</a>
+            <li class="page-header__item">
+              <a class="page-header__link link" href="./portfolio.html">Портфолио</a>
             </li>
-            <li class="item">
-              <a class="link" href="#">Контакты</a>
+            <li class="page-header__item">
+              <a class="page-header__link link" href="#">Контакты</a>
             </li>
           </ul>
         </nav>
                    
-        <ul class="header-contacts address list">
+        <ul class="page-header__contacts address list">
           <li class="item">
-            <a class="link" href="mailto:info@devstudio.com">
+            <a class="link contacts-link" href="mailto:info@devstudio.com">
               <svg class="contacts-icon-envelope">
                 <use href="./img/symbol-defs.svg#icon-envelope"></use>
               </svg>
@@ -42,7 +42,7 @@
           </li>
           <li class="item">
             
-            <a class="link" href="tel:+380961111111">
+            <a class="link contacts-link" href="tel:+380961111111">
               <svg class="contacts-icon-smartphone">
                 <use href="./img/symbol-defs.svg#icon-smartphone"></use>
               </svg>
@@ -69,19 +69,19 @@
         <h2 hidden>Особенности</h2>
 
         <ul class="features-list list">
-          <li class="fetures-list-item antenna-icon">
+          <li class="features-list-item antenna-icon">
             <h3 class="features-title">Внимание к деталям</h3>
             <p class="features-text">Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
           </li>
-          <li class="fetures-list-item clock-icon">
+          <li class="features-list-item clock-icon">
             <h3 class="features-title">Пунктуальность</h3>
             <p class="features-text">Задача организации, в особенности же рамки и место обучения кадров влечет за собой.</p>
           </li>
-          <li class="fetures-list-item diagram-icon">
+          <li class="features-list-item diagram-icon">
             <h3 class="features-title">Планирование</h3>
             <p class="features-text">Равным образом консультация с широким активом в значительной степени обуславливает.</p>
           </li>
-          <li class="fetures-list-item astronaut-icon">
+          <li class="features-list-item astronaut-icon">
             <h3 class="features-title">Современные технологии</h3>
             <p class="features-text">Значимость этих проблем настолько очевидна, что реализация плановых заданий.</p>
           </li>
@@ -92,7 +92,7 @@
 <!--=================Чем мы занимаемся=================-->
     <section class="what-we-do">
       <div class="container">
-        <h2 class="what-we-do-title">Чем мы занимаемся</h2>
+        <h2 class="section-title">Чем мы занимаемся</h2>
         <ul class="what-we-do-list list">
           <li class="what-we-do-item">
             <img src="./img/what-we-do/box-1.jpg" alt="Разработка вэб-страниц" width="370">
@@ -121,7 +121,7 @@
 
         <div class="container team-container">
 
-          <h2 class="team-main-title">Наша команда</h2>
+          <h2 class="section-title">Наша команда</h2>
 
           <ul class="team-list list">
 
@@ -275,7 +275,7 @@
 <!--================= Наши клиенты =================-->
      <section class="customers">
        <div class="container">
-         <h2 class="team-main-title">Постоянные клиенты</h2>
+         <h2 class="section-title">Постоянные клиенты</h2>
 
          <ul class="customers-list list">
            <li class="customers-list-item">
@@ -330,7 +330,7 @@
         <div class="container footer-container">
 
           <div class="footer-container-address">
-            <a href="./index.html" class="footer-link link logo"><span>Web</span>Studio</a>
+            <a href="./index.html" class="footer-link logo"><span>Web</span>Studio</a>
             
             <address>
             

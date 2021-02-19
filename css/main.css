@@ -1,4 +1,23 @@
-/* ============ Обнуление стилей =================== */
+@charset "UTF-8";
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+  --link-color: #ffffff;
+  --logo-color: #000;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 
 h1,
 h2,
@@ -24,42 +43,12 @@ img {
   text-decoration: none;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-}
-
-/* =================== Палитра цветов =================== */
-/*основной цвет текста #757575; */
-/*вторичный цвет текста #212121; */
-/*белый #FFFFFF; */
-/*акцент #2196F3; */
-
-/*  =================== Обьявление переменных =================== */
-:root {
-  --primary-text-color: #757575;
-  --title-text-color: #212121;
-  --accent-color: #2196f3;
-  --link-color: #ffffff;
-  --logo-color: #000;
-}
-
 body {
   background-color: var(--link-color);
   color: var(--primary-text-color);
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
-
-/* =================== Стили для webstudio index.html ===================  */
-
-/*=================== Шапка ===================*/
 
 .container {
   width: 1200px;
@@ -69,33 +58,85 @@ body {
   padding-right: 15px;
 }
 
+.logo {
+  text-decoration: none;
+  display: block;
+  color: var(--logo-color);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.192;
+  letter-spacing: 0.03em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo:hover, .logo:focus {
+  color: var(--accent-color);
+}
+
+.logo > span {
+  color: var(--accent-color);
+}
+
+.hero-btn {
+  background-color: var(--accent-color);
+  font-weight: 700;
+  line-height: 1.87em;
+  letter-spacing: 0.06em;
+  color: var(--link-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 0;
+  padding: 10px 32px;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  cursor: pointer;
+}
+
+.section-title {
+  padding-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17em;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+
 .page-header {
   padding-top: 25px;
   padding-bottom: 25px;
   border-bottom: 1px solid #ececec;
 }
 
-.header-container {
+.page-header__container {
   display: flex;
   align-items: center;
 }
 
-.nav-site {
+.page-header__nav-site {
   display: flex;
 }
 
-.logo-link {
-  display: block;
-}
-
-.site-nav {
+.page-header__list {
   display: flex;
   align-items: center;
   margin-left: 93px;
 }
 
-.site-nav .item:not(:last-child) {
+.page-header__list .page-header__item:not(:last-child) {
   margin-right: 50px;
+}
+
+.page-header__link {
+  display: block;
+}
+
+.page-header__contacts {
+  display: flex;
+  margin-left: auto;
 }
 
 .current {
@@ -114,12 +155,7 @@ body {
   border-radius: 2px;
 }
 
-.header-contacts {
-  display: flex;
-  margin-left: auto;
-}
-
-.header-contacts .link {
+.page-header__contacts .link {
   display: flex;
   align-items: center;
 }
@@ -140,17 +176,13 @@ body {
   fill: currentColor;
 }
 
-.header-contacts .item {
+.page-header__contacts .item {
   display: flex;
   align-items: center;
 }
 
-.header-contacts .item + .item {
+.page-header__contacts .item + .item {
   margin-left: 50px;
-}
-
-.site-nav .link {
-  display: block;
 }
 
 .link {
@@ -158,93 +190,49 @@ body {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.143;
   letter-spacing: 0.02em;
-
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link:hover,
-.link:focus {
+.link:hover, .link:focus {
   color: var(--accent-color);
 }
 
-.address .link {
-  color: inherit;
-}
-
-.address .link:hover,
-.address .link:focus {
-  color: var(--accent-color);
+.contacts-link {
+  color: var(--primary-text-color);
 }
 
 .active {
   color: var(--accent-color);
 }
 
-.logo {
-  color: var(--logo-color);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19em;
-  letter-spacing: 0.03em;
-}
-
-.logo > span {
-  color: var(--accent-color);
-}
-
-/* ================== Герой ================== */
 .hero {
   margin: 0 auto;
   max-width: 1600px;
   text-align: center;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../img/hero/hero.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/hero/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-top: 200px;
   padding-bottom: 200px;
 }
+
 .hero-title {
   font-weight: 900;
   font-size: 44px;
-  line-height: 1.36em;
+  line-height: 1.364;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--link-color);
-
   max-width: 620px;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero-btn {
-  background-color: var(--accent-color);
-  font-weight: 700;
-  line-height: 1.87em;
-  letter-spacing: 0.06em;
-  color: var(--link-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: 0;
-  padding: 10px 32px;
-}
-
-.hero-btn:hover,
-.hero-btn:focus {
-  cursor: pointer;
-}
-
-/*=================== Особенности ===================*/
 .features {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -253,7 +241,7 @@ body {
 .features-title {
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14em;
+  line-height: 1.143;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--title-text-color);
@@ -261,8 +249,9 @@ body {
 }
 
 .features-text {
+  font-weight: 400;
   font-size: 14px;
-  line-height: 1.71em;
+  line-height: 1.714;
   letter-spacing: 0.03em;
 }
 
@@ -271,11 +260,11 @@ body {
   justify-content: space-between;
 }
 
-.fetures-list-item {
+.features-list-item {
   width: 270px;
 }
 
-.fetures-list-item::before {
+.features-list-item::before {
   display: block;
   content: '';
   height: 120px;
@@ -302,20 +291,8 @@ body {
   background-image: url(../img/features/astronaut.svg);
 }
 
-/*=================== Чем мы занимаемся ===================*/
-
 .what-we-do {
   padding-bottom: 94px;
-}
-
-.what-we-do-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17em;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--title-text-color);
-  margin-bottom: 94px;
 }
 
 .what-we-do-list {
@@ -349,11 +326,11 @@ body {
   color: var(--link-color);
 }
 
-/* ====================== Наша команда ====================== */
 .team {
   padding-top: 94px;
   padding-bottom: 94px;
   text-align: center;
+  background-color: #f5f4fa;
 }
 
 .team-list {
@@ -363,19 +340,16 @@ body {
 
 .team-list-item {
   background: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-main-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17em;
+.team-list-item-text {
+  font-size: 16px;
+  line-height: 1.188;
+  text-align: center;
   letter-spacing: 0.03em;
-  color: var(--title-text-color);
-  margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
 }
 
 .team-wraper {
@@ -392,18 +366,6 @@ body {
   margin-bottom: 10px;
 }
 
-.team-item-text {
-  font-size: 16px;
-  line-height: 1.188;
-  text-align: center;
-  letter-spacing: 0.03em;
-  margin-bottom: 16px;
-}
-.team {
-  background-color: #f5f4fa;
-}
-
-/* ======= Соцыальные сети ============ */
 .social-list {
   display: flex;
   justify-content: center;
@@ -416,12 +378,10 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-list-link:hover,
-.social-list-link:focus {
+.social-list-link:hover, .social-list-link:focus {
   background-color: var(--accent-color);
 }
 
@@ -440,7 +400,6 @@ body {
   fill: var(--link-color);
 }
 
-/*==================== Постоянные клиенты =============== */
 .customers {
   text-align: center;
   padding-top: 94px;
@@ -450,6 +409,7 @@ body {
 .customers-list {
   display: flex;
 }
+
 .customers-list-item:not(:last-child) {
   padding-right: 30px;
 }
@@ -461,9 +421,7 @@ body {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item-link:hover .customers-link-icon,
@@ -473,7 +431,6 @@ body {
   border-radius: 4px;
 }
 
-/* =================== Footer =================== */
 .footer {
   background-color: #2f303a;
   padding-top: 60px;
@@ -484,6 +441,12 @@ body {
   display: flex;
 }
 
+.footer-link {
+  display: inline-block;
+  color: var(--link-color);
+  margin-bottom: 20px;
+}
+
 .footer-container-address {
   margin-right: 70px;
   width: 231px;
@@ -491,11 +454,6 @@ body {
 
 .footer-list .footer-list-item:not(:last-child) {
   margin-bottom: 9px;
-}
-.footer-link {
-  display: inline-block;
-  color: var(--link-color);
-  margin-bottom: 20px;
 }
 
 .footer-link-address {
@@ -529,8 +487,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-social-link:hover,
-.footer-social-link:focus {
+
+.footer-social-link:hover, .footer-social-link:focus {
   background-color: var(--accent-color);
 }
 
@@ -549,9 +507,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* =================== Стили для portfolio.html =================== */
-
-/* =================== Фильтры ===================*/
 .portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -571,22 +526,18 @@ body {
   padding: 6px 22px;
   border: unset;
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.btn:hover, .btn:focus {
+  color: var(--link-color);
+  background-color: var(--accent-color);
 }
 
 .filters .item:not(:last-child) {
   margin-right: 9px;
 }
 
-.filters button:hover,
-.filters button:focus {
-  color: var(--link-color);
-  background-color: var(--accent-color);
-}
-
-/* =================== Портфолио =================== */
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -604,7 +555,7 @@ body {
 .title {
   font-weight: 700;
   font-size: 18px;
-  line-height: 2em;
+  line-height: 2;
   letter-spacing: 0.06em;
   color: var(--title-text-color);
 }
@@ -623,18 +574,15 @@ body {
   display: block;
   text-decoration: none;
   color: var(--primary-text-color);
-
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0ms;
 }
 
-.projsects-list-link:hover,
-.projsects-list-link:focus {
+.projsects-list-link:hover, .projsects-list-link:focus {
   color: var(--primary-text-color);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .projects-list-image {
@@ -642,10 +590,17 @@ body {
 }
 
 /* Оверлей */
-
 .thumb {
   position: relative;
   overflow: hidden;
+}
+
+.thumb-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03em;
+  color: var(--link-color);
 }
 
 .thumb-overlay {
@@ -653,7 +608,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, calc(-50% + 100%));
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -661,7 +615,6 @@ body {
   height: 100%;
   padding-left: 24px;
   padding-right: 24px;
-
   background: rgba(33, 150, 243, 0.9);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -670,16 +623,6 @@ body {
 .projsects-list-link:focus .thumb-overlay {
   transform: translate(-50%, -50%);
 }
-
-.thumb-text {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.56em;
-  letter-spacing: 0.03em;
-  color: var(--link-color);
-}
-
-/*================= Модальное окно =================*/
 
 .backdrop {
   position: fixed;
@@ -690,7 +633,6 @@ body {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   transition: all 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -708,10 +650,8 @@ body {
   width: 528px;
   height: 581px;
   padding: 40px;
-
   background: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
@@ -719,15 +659,12 @@ body {
   position: absolute;
   top: 8px;
   right: 8px;
-
   width: 30px;
   height: 30px;
   border-radius: 50%;
-
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
-
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -736,7 +673,6 @@ body {
   fill: #2196f3;
 }
 
-/*=============== Стили форм ===============*/
 .footer-form {
   margin-left: auto;
 }
@@ -752,7 +688,6 @@ body {
   width: 358px;
   margin-right: 12px;
   padding: 15px;
-
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -767,13 +702,11 @@ body {
   align-items: center;
   width: 200px;
   padding: 0;
-
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.87;
+  line-height: 1.875;
   letter-spacing: 0.06em;
   color: var(--link-color);
-
   background-color: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -781,22 +714,19 @@ body {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn-submit > span {
-  margin-right: 10px;
-}
-
-.btn-submit:hover,
-.btn-submit:focus {
+.btn-submit:hover, .btn-submit:focus {
   background-color: #188ce8;
 }
 
-/*===============Стили формы модального окна=============== */
+.btn-submit .btn-submit > span {
+  margin-right: 10px;
+}
+
 .modal-text {
   margin-bottom: 12px;
-
   font-weight: 700;
   font-size: 20px;
-  line-height: 1.15em;
+  line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
@@ -817,7 +747,6 @@ body {
 
 .label {
   margin-bottom: 10px;
-
   font-size: 12px;
   line-height: 1.17em;
   letter-spacing: 0.01em;
@@ -833,8 +762,7 @@ body {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input:focus,
-.text-area:focus {
+.input:focus {
   outline: none;
   border-color: var(--accent-color);
   border-radius: 4px;
@@ -854,11 +782,15 @@ body {
   margin-bottom: 20px;
   padding: 12px 16px;
   resize: none;
-
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-area:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  border-radius: 4px;
 }
 
 .text-area::placeholder {
@@ -883,7 +815,6 @@ body {
   width: 200px;
   height: 50px;
   margin: 0 auto;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87em;
@@ -896,8 +827,7 @@ body {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-btn:hover,
-.modal-form-btn:focus {
+.modal-form-btn:hover, .modal-form-btn:focus {
   background-color: #188ce8;
 }
 
@@ -916,24 +846,10 @@ body {
 
 .modal-label-textarea {
   margin-bottom: 4px;
-
   font-size: 12px;
   line-height: 1.17em;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
-}
-
-.modal-form-label-policy::before {
-  content: ' ';
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  margin-right: 8px;
-  border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px;
-
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-checkbox:checked + .modal-form-label-policy::before {
@@ -956,3 +872,16 @@ body {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
+
+.modal-form-label-policy::before {
+  content: ' ';
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*# sourceMappingURL=main.css.map */
